@@ -1,0 +1,310 @@
+
+
+Write programs in C++ to answer  following using class concepts 
+
+1. convert celcius to fahrenheit using class
+2. factorial calc using class
+3.product details(product id , price , discount etc.) using class 
+4.add 2 complesx numbers using class
+5.square and cube of a numbver using class
+6.area of a rectangle using class
+7.compound interest calc using class
+8.find largest element from an array using class
+
+1. Celsius to Fahrenheit using Class
+#include <iostream>
+using namespace std;
+
+class Temperature {
+    float celsius, fahrenheit;
+
+public:
+    void input() {
+        cout << "Enter temperature in Celsius: ";
+        cin >> celsius;
+    }
+
+    void convert() {
+        fahrenheit = (celsius * 9 / 5) + 32;
+    }
+
+    void display() {
+        cout << "Temperature in Fahrenheit = " << fahrenheit << endl;
+    }
+};
+
+int main() {
+    Temperature t;
+
+    t.input();
+    t.convert();
+    t.display();
+
+    return 0;
+}
+2. Factorial Calculation using Class
+#include <iostream>
+using namespace std;
+
+class Factorial {
+    int n;
+    long fact;
+
+public:
+    void input() {
+        cout << "Enter a number: ";
+        cin >> n;
+    }
+
+    void calculate() {
+        fact = 1;
+        for(int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+    }
+
+    void display() {
+        cout << "Factorial = " << fact << endl;
+    }
+};
+
+int main() {
+    Factorial f;
+
+    f.input();
+    f.calculate();
+    f.display();
+
+    return 0;
+}
+3. Product Details using Class
+#include <iostream>
+using namespace std;
+
+class Product {
+    int productId;
+    float price, discount, finalPrice;
+
+public:
+    void input() {
+        cout << "Enter Product ID: ";
+        cin >> productId;
+
+        cout << "Enter Product Price: ";
+        cin >> price;
+
+        cout << "Enter Discount (%): ";
+        cin >> discount;
+    }
+
+    void calculate() {
+        finalPrice = price - (price * discount / 100);
+    }
+
+    void display() {
+        cout << "\nProduct ID: " << productId << endl;
+        cout << "Original Price: " << price << endl;
+        cout << "Discount: " << discount << "%" << endl;
+        cout << "Final Price: " << finalPrice << endl;
+    }
+};
+
+int main() {
+    Product p;
+
+    p.input();
+    p.calculate();
+    p.display();
+
+    return 0;
+}
+4. Add Two Complex Numbers using Class
+#include <iostream>
+using namespace std;
+
+class Complex {
+    int real, imag;
+
+public:
+    void input() {
+        cout << "Enter real part: ";
+        cin >> real;
+
+        cout << "Enter imaginary part: ";
+        cin >> imag;
+    }
+
+    void add(Complex c1, Complex c2) {
+        real = c1.real + c2.real;
+        imag = c1.imag + c2.imag;
+    }
+
+    void display() {
+        cout << "Sum = " << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1, c2, c3;
+
+    cout << "Enter first complex number:\n";
+    c1.input();
+
+    cout << "Enter second complex number:\n";
+    c2.input();
+
+    c3.add(c1, c2);
+
+    c3.display();
+
+    return 0;
+}
+5. Square and Cube of a Number using Class
+#include <iostream>
+using namespace std;
+
+class Number {
+    int n, square, cube;
+
+public:
+    void input() {
+        cout << "Enter a number: ";
+        cin >> n;
+    }
+
+    void calculate() {
+        square = n * n;
+        cube = n * n * n;
+    }
+
+    void display() {
+        cout << "Square = " << square << endl;
+        cout << "Cube = " << cube << endl;
+    }
+};
+
+int main() {
+    Number obj;
+
+    obj.input();
+    obj.calculate();
+    obj.display();
+
+    return 0;
+}
+6. Area of Rectangle using Class
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+    float length, breadth, area;
+
+public:
+    void input() {
+        cout << "Enter length: ";
+        cin >> length;
+
+        cout << "Enter breadth: ";
+        cin >> breadth;
+    }
+
+    void calculate() {
+        area = length * breadth;
+    }
+
+    void display() {
+        cout << "Area of Rectangle = " << area << endl;
+    }
+};
+
+int main() {
+    Rectangle r;
+
+    r.input();
+    r.calculate();
+    r.display();
+
+    return 0;
+}
+7. Compound Interest Calculator using Class
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class CompoundInterest {
+    float principal, rate, time, amount, ci;
+
+public:
+    void input() {
+        cout << "Enter Principal Amount: ";
+        cin >> principal;
+
+        cout << "Enter Rate of Interest: ";
+        cin >> rate;
+
+        cout << "Enter Time (years): ";
+        cin >> time;
+    }
+
+    void calculate() {
+        amount = principal * pow((1 + rate / 100), time);
+        ci = amount - principal;
+    }
+
+    void display() {
+        cout << "Compound Interest = " << ci << endl;
+        cout << "Total Amount = " << amount << endl;
+    }
+};
+
+int main() {
+    CompoundInterest c;
+
+    c.input();
+    c.calculate();
+    c.display();
+
+    return 0;
+}
+8. Find Largest Element from an Array using Class
+#include <iostream>
+using namespace std;
+
+class Largest {
+    int arr[100], n, largest;
+
+public:
+    void input() {
+        cout << "Enter number of elements: ";
+        cin >> n;
+
+        cout << "Enter array elements:\n";
+        for(int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+    }
+
+    void findLargest() {
+        largest = arr[0];
+
+        for(int i = 1; i < n; i++) {
+            if(arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+    }
+
+    void display() {
+        cout << "Largest Element = " << largest << endl;
+    }
+};
+
+int main() {
+    Largest obj;
+
+    obj.input();
+    obj.findLargest();
+    obj.display();
+
+    return 0;
+}
